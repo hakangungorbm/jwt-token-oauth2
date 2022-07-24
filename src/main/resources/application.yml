@@ -1,0 +1,20 @@
+#Bu kütüphaneyi kullanacak bir proje aşağıdaki şekilde proplar geçerek:
+#1) Swagger özelliğini kullanabilir
+
+spring:
+  application.name: jwt-token-oauth2
+
+server:
+  port: 8082
+
+oauth2.clients:
+  swagger:
+    clientId: swagger-user
+    secret: swagger-secret
+    grantType: password
+    scope: swagger
+  rest:
+    clientid: SQMXbbFPL3
+    secret: b5w-ypClrz9ED6*4s
+    grantType: client_credentials
+    scope: service-to-service
