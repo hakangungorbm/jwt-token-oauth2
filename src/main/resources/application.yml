@@ -1,12 +1,52 @@
-#Bu kütüphaneyi kullanacak bir proje aşağıdaki şekilde proplar geçerek:
-#1) Swagger özelliğini kullanabilir
-
 spring:
   application.name: jwt-token-oauth2
-
+  jackson.serialization.write_dates_as_timestamps: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jwtoauth2token
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa.hibernate.ddl-auto: update
+  jpa.show-sql: false
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+    drop-first: true
+    contexts: sql
+    enabled: true
+###### SERVER CONFIGURATION ######
 server:
-  port: 8082
+  port: 8083
+  compression:
+    enabled: true
+    mime-types: application/json
+  servlet:
+    context-path:
+  error.include-message: always
+  error.include-binding-errors: always
+  error.include-exception: false
+#spring actuator enpoints
+management.endpoints.enabled-by-defautl: false
+management.endpoints.health.enabled: true
 
+###############LOG - NOT: PROD ORTAMINDA ŞİFRELERİ VS YAZAR. EKLENMEZ########
+logging.level.org.springframework.web: TRACE
+logging.level.org.springframework.security: TRACE
+logging.level.org.springframework.web.client.RestTemplate: DEBUG
+logging.level.web: TRACE
+logging.level.org.springframework.actuator: TRACE
+logging.level.org.hibernate.SQL: TRACE
+logging.level.org.hibernate.type.descriptor.sql: TRACE
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+#Bu kütüphaneyi kullanacak bir proje aşağıdaki şekilde proplar geçerek:
+#1) Swagger özelliğini kullanabilir
+#
+#spring:
+#  application.name: jwt-token-oauth2
+#
+#server:
+#  port: 8082
+#
 oauth2.clients:
   swagger:
     clientId: swagger-user

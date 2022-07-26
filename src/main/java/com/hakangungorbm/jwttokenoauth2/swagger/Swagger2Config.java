@@ -27,14 +27,14 @@ import java.util.List;
 @RequiredArgsConstructor
 @EnableSwagger2
 @Slf4j
-public class JwtTokenOauth2ApplicationSwagger2Config {
+public class Swagger2Config {
 
     private static final String SECURITY_NAME = "swagger_oauth";
 
     @Value("${spring.application.name:unknown}")
     private String applicationName;
 
-    @Value("${security-services.port:8080}")
+    @Value("${server.port:8080}")
     private int port;
 
     private final OAuth2Properties properties;
