@@ -1,7 +1,7 @@
-package com.hakangungorbm.jwttokenoauth2.authorization;
+package com.hakangungorbm.jwttokenoauth2.configuration;
 
 /**
- * @author hmblocaladmin
+ * @author HakanGungorBm
  * @date 24.07.2022
  */
 

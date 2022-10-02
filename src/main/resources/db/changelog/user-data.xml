@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="user-role-2022-04-01 21:23" author="hakangungorbm" context="sql">
+        <sql splitStatements="true">
+
+            INSERT INTO oauth_user (id, name, surname, email, username, enabled, password ) VALUES (1,'Hakan', 'Güngör', 'engineer6619@gmail.com', 'hakangungorbm', true, '0372a5asdf4554dasf');
+            INSERT INTO role (id,name, description ) VALUES (1,'ADMIN', 'Admin roludur');
+            INSERT INTO role (id,name, description ) VALUES (2,'DOKTOR', 'Doktor roludur');
+            INSERT INTO users_roles (user_id, role_id ) VALUES (1, 1);
+            INSERT INTO users_roles (user_id, role_id ) VALUES (1, 2);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

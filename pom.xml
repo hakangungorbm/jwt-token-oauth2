@@ -19,6 +19,8 @@
     <properties>
         <java.version>17</java.version>
         <io.springfox.version>3.0.0</io.springfox.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
@@ -27,6 +29,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -52,6 +58,11 @@
             <artifactId>liquibase-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>${io.springfox.version}</version>
@@ -67,6 +78,20 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.8.3</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -76,6 +101,11 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.31.Final</version>
         </dependency>
 
     </dependencies>
@@ -116,6 +146,11 @@
                                 <version>${lombok.version}</version>
                             </path>
                             <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${mapstruct.version}</version>
+                            </path>
+                            <path>
                                 <groupId>org.springframework.boot</groupId>
                                 <artifactId>spring-boot-configuration-processor</artifactId>
                                 <version>2.5.0</version>
@@ -130,6 +165,10 @@
                             <compilerArg>-J-Duser.language=en_us</compilerArg>
                             <compilerArg>-J-Duser.country=US</compilerArg>
                             <compilerArg>-J-Dfile.encoding=UTF-8</compilerArg>
+                            <arg>-Amapstruct.suppressGeneratorTimestamp=true</arg>
+                            <arg>-Amapstruct.suppressGeneratorVersionInfoComment=true</arg>
+                            <arg>-Amapstruct.defaultComponentModel=spring</arg>
+                            <arg>-Amapstruct.unmappedTargetPolicy=IGNORE</arg>
                         </compilerArgs>
                     </configuration>
                 </plugin>

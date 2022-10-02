@@ -1,8 +1,8 @@
 package com.hakangungorbm.jwttokenoauth2.swagger;
 
 
-import com.hakangungorbm.jwttokenoauth2.authorization.OAuth2ClientProperties;
-import com.hakangungorbm.jwttokenoauth2.authorization.OAuth2Properties;
+import com.hakangungorbm.jwttokenoauth2.configuration.OAuth2ClientProperties;
+import com.hakangungorbm.jwttokenoauth2.configuration.OAuth2Properties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

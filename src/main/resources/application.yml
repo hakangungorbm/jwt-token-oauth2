@@ -58,3 +58,12 @@ oauth2.clients:
     secret: b5w-ypClrz9ED6*4s
     grantType: client_credentials
     scope: service-to-service
+
+jwt:
+  encryptkey: byNhr-bnNkpYCGOZ3aet0zwPadHG_VsEHaWkwisrmF8
+  signkey: mrQBW3G7c9NoVdkZ-Nxh3dS3tIVaDrHMdR8CmnDeubYzhJvkgPWkAC8E0UB117vUuoxwOqjl-HgMAwJJtr7hMNk-dbdJwrLcdXuDaIFPEvk_oQuHMq1vSF6qJ2C9n79uVSZoG7cc8iVBBWRxJcjyHP8fPyKvH20BmEVsUuAatgzT7YVpNLdWzf-g3vA1zXTVh5xNMl7QESlDmGAPF-gvfPO17xS38kWMK-Tyzo_vIC3zZN8iQGvIL7Sd2wlbjd2fgrQPVzvCmtnbOU7y4IdnIBkhWVQzs6lvnLzRgkbX56_rs0V9cD0SyTHlsJDUw2yTjBMHR8GMij_HpzYDbgpduw
+  type: jwe
+
+security.user.name: admin
+security.user.password: admin
+security.user.role: USER,ADMIN

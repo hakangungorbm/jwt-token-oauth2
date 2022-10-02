@@ -12,8 +12,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <option name="mapstruct.defaultComponentModel" value="spring" />
+        <option name="mapstruct.suppressGeneratorTimestamp" value="true" />
+        <option name="mapstruct.suppressGeneratorVersionInfoComment" value="true" />
+        <option name="mapstruct.unmappedTargetPolicy" value="IGNORE" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-configuration-processor/2.5.0/spring-boot-configuration-processor-2.5.0.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/hibernate/hibernate-jpamodelgen/5.4.31.Final/hibernate-jpamodelgen-5.4.31.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar" />
@@ -31,7 +37,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="jwt-token-oauth2" options="-parameters -J-Duser.language=en_us -J-Duser.country=US -J-Dfile.encoding=UTF-8" />
+      <module name="jwt-token-oauth2" options="-parameters -Amapstruct.suppressGeneratorTimestamp=true -Amapstruct.suppressGeneratorVersionInfoComment=true -Amapstruct.defaultComponentModel=spring -Amapstruct.unmappedTargetPolicy=IGNORE -J-Duser.language=en_us -J-Duser.country=US -J-Dfile.encoding=UTF-8" />
     </option>
   </component>
 </project>
